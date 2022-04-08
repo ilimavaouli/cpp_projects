@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+	//Variable Declaration
+	double employeeID;
+	double RatePerHour;
+	double HoursWorked; 
+	double gross; 
+
+	//Inputs
+	cout << "Employee ID: "; 
+	cin >> employeeID;
+	cout << "Hours Worked: ";
+	cin >> HoursWorked;
+	cout << "Rate Per Hour: ";
+	cin >> RatePerHour;
+
+	//Processing 
+	gross = RatePerHour * HoursWorked;
+
+
+	//Output Section
+	cout << "Income Calculator" << endl;
+	cout << "***********" << endl; 
+	cout << "Employee ID:  " << employeeID << endl;
+	cout << "Hours Worked: " << HoursWorked << endl; 
+	cout << "Rate per Hour: " << RatePerHour << endl; 
+	cout << "Gross Salary: " << gross << endl; 
+}
