@@ -9,6 +9,8 @@ int main()
 	double RatePerHour;
 	double HoursWorked; 
 	double gross; 
+	double taxes; 
+	double net; 
 
 	//Inputs
 	cout << "Employee ID: "; 
@@ -20,6 +22,8 @@ int main()
 
 	//Processing 
 	gross = RatePerHour * HoursWorked;
+	taxes = gross * .2;
+	net = gross - taxes;
 
 
 	//Output Section
@@ -29,4 +33,6 @@ int main()
 	cout << "Hours Worked: " << HoursWorked << endl; 
 	cout << "Rate per Hour: " << RatePerHour << endl; 
 	cout << "Gross Salary: " << gross << endl; 
+	cout << "Taxes: " << taxes << endl; 
+	cout << "Net Salary: " << net << endl; 
 }
