@@ -1,0 +1,25 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+
+//Variable Declaration
+	int ID;
+	int firstname;
+	int lastname; 
+	int total; 
+	int average; 
+	int grade; 
+	int comments; 
+	
+	//Inputs
+	cout << "First Name: ";
+	cin >> firstname; 
+	cout << "Last Name; ";
+	cin >> lastname; 
+	cout << ""
+
+	//Processing
+
+}
