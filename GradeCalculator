@@ -1,0 +1,70 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	//Variable Declaration and Initialization
+	int hours = int();
+	double rate = double();
+	char mi = char();
+	bool flag = bool();
+	string fname = string();
+	const double TAX = .0875;
+	double hoursPerWeek = double(); 
+	double gross = double();
+
+
+	//Header 
+	cout << "Grade Calculator" << endl;
+	cout << "Long Beach City College" << endl;
+	cout << "=======================" << endl;
+	
+
+	//Inputs
+	cout << "Enter Hours Worked: ";
+	cin >> hoursPerWeek;
+
+	cout << "Enter your rate: ";
+	cin >> rate;
+
+	cout << "What is your middle initial?: ";
+	cin >> mi;
+
+	cout << "Enter 1 for true or 0 for false: ";
+	cin >> flag;
+
+	cout << "Enter your first name: ";
+	cin >> fname;
+
+
+
+
+	//Processing
+	hoursPerWeek = static_cast <double> (hours);
+	gross = hoursPerWeek * rate;
+
+	//Outputs
+	cout << hoursPerWeek << endl; 
+	cout << rate << endl;
+	cout << mi << endl;
+	cout << flag << endl;
+	cout << fname << endl;
+	cout << "Weekly Gross Income: "<<gross << endl;
+
+	if (gross > 1000)
+		cout << "Great Job" << endl;
+	
+	if (gross < 1000)
+		cout << "Not bad" << endl; 
+
+	if (gross == 0)
+		cout << "What happened?" << endl;
+
+	if (gross < 0)
+		cout << "Negative Salary" << endl; 
+
+	system("pause");
+	return 0;
+
+}
