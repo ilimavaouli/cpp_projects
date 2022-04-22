@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+
+	//Variable Declaration and Initialization
+	double id = double();
+	string fname = string();
+	string lname = string();
+	double total = double();
+	double average = double();
+	double cs11score = double();
+	double cs12score = double();
+	double cs22score = double();
+
+
+	//Header 
+	cout << "Grade Calculator" << endl;
+	cout << "Long Beach City College" << endl;
+	cout << "=======================" << endl;
+
+	//Inputs
+	cout << "ID: ";
+	cin >> id;
+
+	cout << "Enter Your First Name: ";
+	cin >> fname;
+
+	cout << "Enter your Last Name: ";
+	cin >> lname;
+
+	cout << "Score for CS11: ";
+	cin >> cs11score; 
+
+	cout << "Score for CS12: ";
+	cin >> cs12score;
+
+	cout << "Score for CS22: ";
+	cin >> cs22score;
+
+
+
+	//Processing
+	total = (cs11score + cs12score + cs22score);
+	average = (total / 3);
+
+	//Outputs
+	cout <<"ID: " << id << endl;
+	cout << "First Name: " << fname << endl;
+	cout << "Last Name: "<< lname << endl;
+	cout << "Total: "<< total << endl;
+
+
+	cout << "Average: " << average << ".00 %" << endl;
+
+	if (average >= 90)
+		cout << " Grade: A \n Comments: Congradulations on your achievements!" << endl;
+
+	else if (average >= 80 && average < 90)
+		cout << "Grade: B \n Comments: Well done!" << endl;
+
+	else if (average < 80 && average >= 70)
+		cout << "Grade: C \n Comments: Not Bad" << endl;
+
+	else if (average < 70 && average >= 60)
+		cout << "Grade: D \n Comments: What Happened ? " << endl;
+
+	else if (average < 60)
+	cout << "Grade: F \n Fail" << endl;
+
+	system("pause");
+	return 0;
+
+}
