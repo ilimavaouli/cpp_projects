@@ -1,0 +1,61 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    //coefficients of the polynomial
+    double a = double();
+    double b = double();
+    double c = double();
+    //discriminant (the stuff under the sqrt)
+    double disc = double();
+    //double a2 = double();
+    //defining my zero variables
+    double x1, x2 = double();
+    double Re, Im = double();
+
+    //precision of the output
+    cout << scientific << setprecision(4);
+
+    cout << "This program will provide a solutions for an equation of the form \n A * x ^ 2 + B * x + C = 0,\n where A, B and C are integers, and A is not equal to zero.\n";
+    cout << "Please enter the values for a, b, and c:";
+    cin >> a >> b >> c;
+
+    //defining discriminant
+    disc = (b * b) - (4 * a * c);
+
+    if (disc == 0)
+    {
+        //here you would only have one zero
+        x1 = -b / (2 * a);
+        cout << "There is only one zero and it is: x = ";
+        cout << x1;
+
+    }
+    else if (disc > 0)
+    {
+        //here you would have two REAL zeros
+        x1 = (-b + sqrt(disc)) / (2 * a);
+        x2 = (-b - sqrt(disc)) / (2 * a);
+        cout << "There are two REAL zeros and they are x1 = " << x1 << " and x2 = " << x2;
+    }
+
+    else if (disc < 0)
+    {
+        //here we have two IMAGINARY zeros
+        disc = disc * (-1); //making disc positive
+
+        //real part of the imaginary numbers
+        Re = -b / (2 * a);
+        //imaginary part of the imaginary numbers
+        Im = sqrt(disc) / (2 * a);
+
+        //recall that x1 and x2 are complex conjugates of each other and only differ by a negative sign for the imaginary part
+        cout << "There are two REAL zeros and they are x1 = " << Re << " + " << Im << "i" << " and x2 = " << Re << " - " << Im << "i" << endl;
+    }
+
+    return 0;
+
+}
