@@ -1,0 +1,95 @@
+#include <iostream>
+#include <fstream>
+#include <iomanip> //contains setprecision and setw()
+#include <vector>
+using namespace std;
+
+int main()
+{
+    double qty = double();
+    double cost = double();
+    double value = double();
+    string item = string();
+    double invTotal = double();
+
+    ifstream in;
+    ofstream out;
+
+    in.open("inventory.txt");
+    out.open("results.txt");
+
+    //printing header
+    for (int j = 1; j <= 69; j++)
+    {
+        cout << "*";
+    }
+    cout << endl;
+    cout << endl;
+    cout <<"        Inventory Report for Jane Doe International Hardware" << endl;//Title
+    for (int j = 1; j <= 69; j++)
+    {
+        cout << "*";
+    }
+    cout << endl;
+    cout << left << setw(17.25) << "ITEM:"
+        << left << setw(17.25) << "NUMBER OF UNITS:"
+        << right << setw(17.25) << "UNIT COST($):"
+        << right << setw(17.25) << "TOTAL VALUE($):" << endl;
+    out << left << setw(17.25) << "ITEM:"
+        << left << setw(17.25) << "NUMBER OF UNITS:"
+        << right << setw(17.25) << "UNIT COST($):"
+        << right << setw(17.25) << "TOTAL VALUE($):" << endl;
+
+    for (int j = 1; j <= 69; j++)
+    {
+        cout << "-";
+    }
+    cout << endl;
+    //out << right << setfill(" * ") << setw(68) << " * " << endl;
+        //cout << right << " * " << setw(68) << setfill("*") << endl;
+        //cout << setfill(" ");
+
+
+    invTotal = 0;//initializing
+
+    while (!in.eof()) //while reading the file and haven't reached end of file
+    {
+        in >> item >> qty >> cost; //reads the records
+        value = cost * qty;
+        invTotal += value; //invTotal = invTotal + value
+        //make pretty
+        cout << fixed << setprecision(2); //this is money so 2 decimal places in console
+        out << fixed << setprecision(2); //this is money so 2 decimal places in txt file
+
+           //print to output file
+        out << left << setw(14) << item
+            << right << setw(20) << qty
+            << right << setw(15) << cost
+            << right << setw(20) << value;
+        out << endl;
+
+        //printing to the console
+        cout << left << setw(14) << item
+            << right << setw(20) << qty
+            << right << setw(15) << cost
+            << right << setw(20) << value;
+        cout << endl;
+    }
+   
+    for (int j = 1; j <= 69; j++)
+    {
+        cout << "-";
+    }
+    cout << endl;
+    cout << left << setw(34.5) << "Inventory Total($)"
+        << right << setw(34.5) << invTotal << endl;
+    out << left << setw(34.5) << "Inventory Total($)"
+        << right << setw(34.5) << invTotal;
+
+
+
+
+    system("pause");
+    //return 0;
+
+}
